@@ -194,7 +194,7 @@ img {
 
 
 /* Home Article List */
-.articlesheading {
+.articles__heading {
   margin-top: 4rem;
   font-weight: 400;
 }
@@ -208,7 +208,7 @@ img {
   flex-direction: column;
 }
 
-.articlelist-date {
+.article-list__date {
   font-size: 1rem;
   color: var(--gray);
   width: 100px;
@@ -230,7 +230,7 @@ img {
     align-items: center;
   }
 
-  .articlelist__date {
+  .article-list__date {
     text-align: right;
   }
 }
