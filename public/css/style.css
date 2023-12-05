@@ -303,9 +303,9 @@ img {
   padding: 10px 0;
 }
 
-/* SeachBar */
+/* SearchBar */
 .searchBar {
-  visibility: hidden;
+  /* visibility: hidden; */
   transform: translateY(-100px);
   background-color: var(--black);
   padding: 4px 0;
