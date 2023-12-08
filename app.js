@@ -18,10 +18,12 @@ connectDB()
 
 // middleware for searchform
 app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 
+// create session cookie
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
@@ -43,7 +45,7 @@ app.set('view engine', 'ejs')
 
 app.locals.isActiveRoute = isActiveRoute; 
 
-
+// add route = serve> routes>
 app.use('/', require('./server/routes/main'));
 app.use('/', require('./server/routes/admin'));
 
