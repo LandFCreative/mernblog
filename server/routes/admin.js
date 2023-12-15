@@ -220,14 +220,18 @@ router.put('/edit-post/:id', authMiddleware, async (req, res) => {
 /**
  * POST /
  * Admin - Register
+ * Password is encrypted/Hashed
 */
 router.post('/register', async (req, res) => {
   try {
-    const { username, password } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const username = req.body.user;
+    const password = req.body.password;
 
+    // const hashedPassword = bcrypt.hashSync(req.body.password, 10); 
+    const hash = bcrypt.hashSync(password, 10)
+    console.log(hash)
     try {
-      const user = await User.create({ username, password:hashedPassword });
+      const user = await User.create({ username, password:hash});
       res.status(201).json({ message: 'User Created', user });
     } catch (error) {
       if(error.code === 11000) {
@@ -240,7 +244,6 @@ router.post('/register', async (req, res) => {
     console.log(error);
   }
 });
-
 
 /**
  * DELETE /
