@@ -224,14 +224,11 @@ router.put('/edit-post/:id', authMiddleware, async (req, res) => {
 */
 router.post('/register', async (req, res) => {
   try {
-    const username = req.body.user;
-    const password = req.body.password;
+    const { username, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-    // const hashedPassword = bcrypt.hashSync(req.body.password, 10); 
-    const hash = bcrypt.hashSync(password, 10)
-    console.log(hash)
     try {
-      const user = await User.create({ username, password:hash});
+      const user = await User.create({ username, password:hashedPassword });
       res.status(201).json({ message: 'User Created', user });
     } catch (error) {
       if(error.code === 11000) {
@@ -244,7 +241,6 @@ router.post('/register', async (req, res) => {
     console.log(error);
   }
 });
-
 /**
  * DELETE /
  * Admin - Delete Post
