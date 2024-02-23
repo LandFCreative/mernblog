@@ -3,9 +3,9 @@
 A Blog App followed from Net Ninja project. It is built using the MVC Architecture, implemented authorization so people can sign up, 
 customize & personalize the app 
 
-<img src="./public/img/screen1.png" width=70%/>
-<img src="./public/img/screen2.png" width=70%/>
-<img src="./public/img/screen3.png" width=70%/>
+<img src="./public/img/Screen1.png" width=70%/>
+<img src="./public/img/Screen2.png" width=70%/>
+<img src="./public/img/Screen3.png" width=70%/>
 ---
 
 # Objectives
