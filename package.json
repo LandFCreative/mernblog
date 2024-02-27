@@ -4,6 +4,9 @@
     "authors": "C. Deneschuk",
     "version": "1.0.0",
     "main": "index.js",
+    "engines":
+    { "node": "16.x"
+ },
     "scripts": {
         "test": "echo\"Error: no text specified\" && exit 1",
         "start": "node index.js",
